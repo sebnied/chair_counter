@@ -95,7 +95,17 @@ class ChairCounter:
 
 if __name__ == '__main__':
 
-    chair_counter = ChairCounter()
+    import sys
+
+    if len(sys.argv) < 2:
+        print("Please provide the filename as an argument.")
+        sys.exit(1)
+
+    floor_plan_file = sys.argv[1]
+
+    print(f'Analyzing floor plan from {floor_plan_file}\n')
+
+    chair_counter = ChairCounter(floor_plan=floor_plan_file)
     counted = chair_counter.count_all_chairs()
 
     # Output message print
