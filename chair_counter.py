@@ -103,7 +103,7 @@ if __name__ == '__main__':
     total_chairs = [item for sublist in counted.values() for item in sublist]
     print(", ".join([f'{chair}: {total_chairs.count(chair)}' for chair in chair_counter.types_of_chairs]))
 
-    for room_name in counted.keys():
+    for room_name in sorted(counted.keys()):
         print(f"{room_name}:")
         message = [f'{chair}: {counted[room_name].count(chair)}' for chair in chair_counter.types_of_chairs]
         print(", ".join(message))
