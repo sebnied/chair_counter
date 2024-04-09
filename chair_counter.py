@@ -97,14 +97,10 @@ if __name__ == '__main__':
 
     import sys
 
-    try:
-        if len(sys.argv) < 2:
-            print("Please provide the filename as an argument.")
-            sys.exit(1)
-
-        floor_plan_file = sys.argv[1]
-    except:
+    if len(sys.argv) < 2:
         floor_plan_file = 'rooms.txt'
+    else:
+        floor_plan_file = sys.argv[1]
 
     print(f'Analyzing floor plan from {floor_plan_file}\n')
 
